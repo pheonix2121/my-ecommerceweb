@@ -1,5 +1,7 @@
 import React from "react";
 
+
+
 const DummyProducts = [
   {
     title: "Colors",
@@ -35,8 +37,7 @@ const ProductList = () => {
       <img src={product.imageUrl} alt={'pro-photos'} />
     </div>
   ));
-
-  return <div className="list">{list}</div>;
+  return <div>{list}</div>;
 };
 
 export default ProductList;
