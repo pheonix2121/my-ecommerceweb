@@ -3,12 +3,10 @@ import Cart from './Cart';
 import classes from './CartIcon.module.css';
 import cartIconPic from '../../assets/cartIconPic.png';
 import ProductList from '../ProductList';
-
 const CartIcon = () => {
+  const [isCartOpen, setIsCartOpen] = useState(false);
   const [cartElements, setCartElements] = useState([]);
   const [cartCount, setCartCount] = useState(0);
-  const [isCartOpen, setIsCartOpen] = useState(false);
-
   const addToCart = (product) => {
     const updatedCartElements = [...cartElements, { ...product, quantity: 1 }];
     setCartElements(updatedCartElements);
