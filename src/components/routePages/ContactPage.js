@@ -13,10 +13,10 @@ const Contact = () => {
       email,
       phone,
     };
-
+    
     try {
       const response = await fetch(
-        "https://my-ecomm-demo-app-default-rtdb.firebaseio.com/eCommUser",
+        "https://my-ecomm-demo-app-default-rtdb.firebaseio.com/eCommUser.json",
         {
           method: "POST",
           body: JSON.stringify(data),
@@ -25,12 +25,12 @@ const Contact = () => {
           },
         }
       );
+
       if (!response.ok) {
         throw new Error("Something went wrong....Retrying");
       }
 
       const responseData = await response.json();
-
       console.log("Data stored successfully:", responseData);
     } catch (error) {
       console.error("Error storing data:", error);
@@ -40,7 +40,7 @@ const Contact = () => {
     setEmail("");
     setPhone("");
   };
-
+  
   return (
     <form onSubmit={handleSubmit}>
       <label>

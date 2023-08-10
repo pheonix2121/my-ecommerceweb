@@ -2,7 +2,7 @@ import {Link, Routes, Route } from "react-router-dom";
 import CartIcon from "../cart/CartIcon";
 import About from "../routePages/About";
 import Home from "../routePages/Home";
-
+import ProductDetail from "../Product/ProductDetails";
 const Header = () => {
   return (
     <div>
@@ -13,8 +13,9 @@ const Header = () => {
       </div>
       <CartIcon />
       <Routes>
-        <Route path="/about" element={<About />} />
+      <Route path="/about" element={<About />} />
         <Route path="/home" element={<Home />} />
+        <Route path="/ProductDetail" component={ProductDetail} />
       </Routes>
     </div>
   );

@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import Cart from './Cart';
 import classes from './CartIcon.module.css';
 import cartIconPic from '../../assets/cartIconPic.png';
-import ProductList from '../ProductList';
+import ProductList from '../Product/ProductList';
 const CartIcon = () => {
   const [isCartOpen, setIsCartOpen] = useState(false);
   const [cartElements, setCartElements] = useState([]);
