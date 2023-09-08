@@ -4,12 +4,11 @@ import { NavLink } from "react-router-dom";
 const About = () => {
   return (
     <div>
-       <div>
-        <NavLink to="/contact" activeClassName="active">Contact Us</NavLink>
+      <div>
+        <NavLink excat to="/contact" activeClassName="active">Contact Us</NavLink>
       </div>
       <Contact />
-
-      <h1>ABOUT</h1>
+      <h1>ABOUT</h1> 
       <p>
         Lorem ipsum carrots enhanced rebates. Excellent sayings of a man of
         sorrows, hates no prosecutors will unfold in the enduring of which were

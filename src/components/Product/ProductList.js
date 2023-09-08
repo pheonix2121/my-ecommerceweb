@@ -1,6 +1,6 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
-
 const DummyProducts = [
   {
     title: 'Colors',
@@ -36,18 +36,25 @@ const ProductList = ({ addToCart }) => {
     <div key={index}>
       <h2>{product.title}</h2>
       <p>Price: ${product.price}</p>
-      <img src={product.imageUrl} alt="pro-photos" />
-      <img
-        src={product.imageUrl}
-        alt="pro-photos"
-        onMouseOver={(e) => (e.currentTarget.style.transform = 'scale(1.2)')}
-        onMouseOut={(e) => (e.currentTarget.style.transform = 'scale(1)')}
-        onClick={() => handleImageClick(product)}
-      />
-      <button onClick={() => addToCart(product)}>Add To Cart</button>
+      <Link to={`/productDetails/${index}`}>
+        <img
+          src={product.imageUrl}
+          alt="pro-photos"
+          onMouseOver={(e) => (e.currentTarget.style.transform = 'scale(1.2)')}
+          onMouseOut={(e) => (e.currentTarget.style.transform = 'scale(1)')}
+        />
+      </Link>
+      <button onClick={() => addToCart(product)}>Add to Cart</button>
     </div>
   ));
-  return <div>{list}</div>;
+
+
+  return (
+    <div>
+      <div></div>
+      {list}
+    </div>
+  );
 };
 
 export default ProductList;
