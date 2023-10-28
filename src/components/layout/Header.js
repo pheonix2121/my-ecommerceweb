@@ -1,26 +1,22 @@
-import {Link, Routes, Route } from "react-router-dom";
+import React from "react";
+import { Link, Routes, Route } from "react-router-dom";
 import CartIcon from "../cart/CartIcon";
 import About from "../routePages/About";
 import Home from "../routePages/Home";
-import LoginPage from "../routePages/LoginPages";
+
 const Header = () => {
   return (
     <div>
-      <div>
-        <Link to="/home">HOME</Link>
-        <Link to="/store">STORE</Link>
-        <Link to="/about">ABOUT</Link>
-        <Link to="/login">LOGIN</Link>
-      </div>
+      <Link to="/home">HOME</Link>
+      <Link to="/store">STORE</Link>
+      <Link to="/about">ABOUT</Link>
       <CartIcon />
       <Routes>
-      <Route exact path="/home" element={<Home />} />
-        <Route exact path="/about" element={<About />} />
-        <Route exact path="/login" element={<LoginPage />} />
-        </Routes>
+        <Route path="/home" element={<Home />} />
+        <Route path="/about" element={<About />} />
+      </Routes>
     </div>
   );
-}
-
+};
 
 export default Header;
